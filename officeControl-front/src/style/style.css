@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #000000;
+  }
+  
+  .root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E5E5E5;
+  
+    min-height: 100vh;
+  } 
