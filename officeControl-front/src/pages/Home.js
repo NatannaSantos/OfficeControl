@@ -15,7 +15,7 @@ function Home() {
     return (
         <Box sx={styles.container}>
             <Box >
-                <Button>Finanças</Button>
+                <Button >Finanças</Button>
                 <Button>Agenda de Tarefas</Button>
                 <Button>Agenda de Contatos</Button>
                 <Button>Funcionários</Button>
