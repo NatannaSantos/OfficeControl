@@ -6,6 +6,8 @@ import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./contexts/AuthContext";
 import { createTheme, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
+import Home from "./pages/Home";
+import Main from "./components/Main";
 
 function App() {
 
@@ -24,6 +26,9 @@ function App() {
                         <Routes>
                             <Route path="/" element={<SignIn />} />
                             <Route path="/sign-up" element={<SignUp />} />
+                            <Route path="app" element={<Main />}>
+                                <Route path="/app/home" element={<Home />} />
+                            </Route>
                         </Routes>
                     </BrowserRouter>
                 </AuthProvider >

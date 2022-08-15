@@ -77,7 +77,7 @@ function SignIn() {
         } = await api.signIn({ email, password });
         console.log(token);
         signIn(token);
-        navigate("/app/disciplinas");
+        navigate("/app/home");
       } catch (error) {
         if (error.response) {
           setMessage({

@@ -20,6 +20,11 @@ function getConfig(token) {
     return baseAPI.post("/sign-in", signInData);
   }
 
+  // async function getCategories(token: string) {
+  //   const config = getConfig(token);
+  //   return baseAPI.get<{ categories: Category[] }>("/categories", config);
+  // }
+
 const api = {
     signUp,
     signIn
