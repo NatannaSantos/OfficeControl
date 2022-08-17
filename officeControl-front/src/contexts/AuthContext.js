@@ -10,7 +10,7 @@ const persistedToken = localStorage.getItem(LOCAL_STORAGE_KEY);
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(persistedToken);
 
-  function signIn(token) {
+  function signIn(token, authData) {
     setToken(token);
     localStorage.setItem(LOCAL_STORAGE_KEY, token);
   }

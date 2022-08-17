@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 function Home() {
 
@@ -15,7 +16,7 @@ function Home() {
     return (
         <Box sx={styles.container}>
             <Box >
-                <Button >Finanças</Button>
+                <Button variant="contained" component={RouterLink} to="/app/finance">Finanças</Button>
                 <Button>Agenda de Tarefas</Button>
                 <Button>Agenda de Contatos</Button>
                 <Button>Funcionários</Button>

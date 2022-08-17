@@ -8,6 +8,9 @@ import { createTheme, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import Home from "./pages/Home";
 import Main from "./components/Main";
+import Finance from "./pages/Finance/Finance";
+import Entries from "./pages/Finance/Entries";
+import Outputs from "./pages/Finance/Outputs";
 
 function App() {
 
@@ -28,6 +31,9 @@ function App() {
                             <Route path="/sign-up" element={<SignUp />} />
                             <Route path="app" element={<Main />}>
                                 <Route path="/app/home" element={<Home />} />
+                                <Route path="/app/finance" element={<Finance/>} />
+                                <Route path="/app/entries" element={<Entries/>} />
+                                <Route path="/app/outputs" element={<Outputs/>} />
                             </Route>
                         </Routes>
                     </BrowserRouter>
