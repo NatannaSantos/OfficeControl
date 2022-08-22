@@ -5,7 +5,8 @@ import transactionRepository from "../repositories/transactionRepository.js";
 export type CreateTransactionData = Omit<Transaction, "id">;
 
 async function createTransaction(transactionData:CreateTransactionData){
-
+    
+   
     await transactionRepository.insert(transactionData);
 
 }

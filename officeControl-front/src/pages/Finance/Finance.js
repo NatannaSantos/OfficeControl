@@ -25,7 +25,17 @@ function Finance() {
         },
         title: { marginBottom: "30px" },
         finances:{
-            marginBottom:"10px"
+            marginBottom:"10px",
+            fontSize:"30px"            
+        },
+        balance:{
+            width:"100vw",
+            fontSize :"20px",
+            fontWeight:"bold",
+            display: "flex",
+            justifyContent:"center",
+            alignItems:"center",
+            padding:"10pxescritorio"
         }
     }
 
@@ -57,7 +67,7 @@ function Finance() {
             <Box sx={styles.finances}>
                 {transactions.length !== 0 ? <TableExtract transactions={transactions}/> : "Ainda não há cadastros financeiros"}
             </Box>
-            <Box>Saldo final: {balance}</Box>
+            <Box sx={styles.balance}>Saldo final: {balance}</Box>
             <Box sx={styles.registration}>
                 <Button variant="contained" component={RouterLink} to="/app/entries">Cadastrar Entrada</Button>
                 <Button variant="contained" component={RouterLink} to="/app/outputs">Cadastrar Saída</Button>

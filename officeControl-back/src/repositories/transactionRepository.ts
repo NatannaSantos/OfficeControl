@@ -2,7 +2,7 @@ import { prisma } from "../database.js";
 import { CreateTransactionData } from "../services/transactionService.js";
 
 async function insert(createTransactionData: CreateTransactionData) {
-  console.log("entrando aqui");
+  console.log("createTransactionData",createTransactionData);
     return prisma.transaction.create({
       data: createTransactionData
     });

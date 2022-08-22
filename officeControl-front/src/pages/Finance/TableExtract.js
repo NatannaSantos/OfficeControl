@@ -10,7 +10,6 @@ import TableRow from '@mui/material/TableRow';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import api from '../../services/api';
 import useAuth from '../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 import useAlert from '../../hooks/useAlert';
 
 const columns = [
