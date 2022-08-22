@@ -58,15 +58,7 @@ function TableExtract(transactions) {
           return;
         }
       }
-    }
-      
-
-
-
-      // const promise = api.deleteTransaction(id, auth.token);
-      // promise.then(() => {
-      //     handleLoadTransaction();
-    
+    }       
 
 
     const styles = {
