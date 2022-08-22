@@ -21,13 +21,20 @@ model Company {
   @@map("companies")
 }
 
+enum TypeTransaction {
+  entrada
+  saida
+}
+
+
 model Transaction{
   id       Int    @id @default(autoincrement())
   company  Company  @relation(fields: [companyId], references: [id])
   companyId Int
-  description String
-  value Int
-  date DateTime @default(now())
+  description String 
+  value Float
+  type  TypeTransaction
+  date DateTime @default(now()) @db.Timestamptz(3)
 
   @@map("transactions")
 }

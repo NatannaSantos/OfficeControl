@@ -20,14 +20,27 @@ function getConfig(token) {
     return baseAPI.post("/sign-in", signInData);
   }
 
-  // async function getCategories(token: string) {
-  //   const config = getConfig(token);
-  //   return baseAPI.get<{ categories: Category[] }>("/categories", config);
-  // }
+  async function transaction(transactionData,token) {
+    const config=getConfig(token);
+    return baseAPI.post("/transactions", transactionData,config);
+  }
+  
+  async function getTransactions(token) {
+    const config = getConfig(token);
+    return baseAPI.get("/transactions", config);
+  }
+
+  async function deleteTransaction(token,id){
+    const config = getConfig(token);
+    return baseAPI.delete(`/transactions/${id}`,config)
+  }
 
 const api = {
     signUp,
-    signIn
+    signIn,
+    transaction,
+    getTransactions,
+    deleteTransaction
 }
 
 export default api;

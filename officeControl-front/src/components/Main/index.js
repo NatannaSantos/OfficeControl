@@ -46,7 +46,7 @@ function Main({ redirectPath = "/sign-in" }) {
       <Box
         sx={styles.container}
       >
-        <Link component={RouterLink} to="/app/finance">
+        <Link component={RouterLink} to="/app/home">
           <img src={logo} />
         </Link>
         <SignOutIcon style={{ cursor: "pointer" }} onClick={handleSignOut} />
