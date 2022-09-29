@@ -12,11 +12,14 @@ datasource db {
 }
 
 model Company {
-  id       Int    @id @default(autoincrement())
-  companyName String 
-  email    String @unique
-  password String
+  id           Int           @id @default(autoincrement())
+  companyName  String
+  email        String        @unique
+  password     String
   transactions Transaction[]
+  contacts     Contact[]
+  activities   Activity[]
+  employees     Employee[]
 
   @@map("companies")
 }
@@ -26,15 +29,49 @@ enum TypeTransaction {
   saida
 }
 
-
-model Transaction{
-  id       Int    @id @default(autoincrement())
-  company  Company  @relation(fields: [companyId], references: [id])
-  companyId Int
-  description String 
-  value Float
-  type  TypeTransaction
-  date DateTime @default(now()) @db.Timestamptz(3)
+model Transaction {
+  id          Int             @id @default(autoincrement())
+  company     Company         @relation(fields: [companyId], references: [id])
+  companyId   Int
+  description String
+  value       Float
+  type        TypeTransaction
+  date        DateTime        @default(now()) @db.Timestamptz(0)
 
   @@map("transactions")
+}
+
+model Contact {
+  id        Int     @id @default(autoincrement())
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId Int
+  name      String
+  Tel       String?
+  email     String?  @unique
+  adress    String?
+
+  @@map("contacts")
+}
+
+model Activity {
+  id          Int     @id @default(autoincrement())
+  company     Company @relation(fields: [companyId], references: [id])
+  companyId   Int
+  description String
+  date        String
+  hour        String?
+
+  @@map("activities")
+}
+
+model Employee {
+  id        Int     @id @default(autoincrement())
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId Int
+  name String
+  tel String?
+  email String? @unique
+  adress String?
+  function String
+  @@map("employees")
 }

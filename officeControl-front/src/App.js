@@ -31,12 +31,13 @@ function App() {
                             <Route path="/sign-up" element={<SignUp />} />
                             <Route path="app" element={<Main />}>
                                 <Route path="/app/home" element={<Home />} />
-                                <Route path="/app/finance" element={<Finance/>} />
-                                <Route path="/app/entries" element={<Entries/>} />
-                                <Route path="/app/outputs" element={<Outputs/>} />
+                                <Route path="/app/finance" element={<Finance />} />
+                                <Route path="/app/entries" element={<Entries />} />
+                                <Route path="/app/outputs" element={<Outputs />} />
                             </Route>
                         </Routes>
                     </BrowserRouter>
+                    <Alert />
                 </AuthProvider >
             </AlertProvider>
         </ThemeProvider>

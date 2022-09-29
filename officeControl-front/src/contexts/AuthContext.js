@@ -9,8 +9,8 @@ const persistedToken = localStorage.getItem(LOCAL_STORAGE_KEY);
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(persistedToken);
-
-  function signIn(token, authData) {
+ 
+  function signIn(token, authData) {    
     setToken(token);
     localStorage.setItem(LOCAL_STORAGE_KEY, token);
   }
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ token, signIn, signOut }}>
+    <AuthContext.Provider value={{ token, signIn, signOut}}>
       {children}
     </AuthContext.Provider>
   );
