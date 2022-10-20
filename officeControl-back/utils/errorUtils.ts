@@ -5,6 +5,7 @@ export interface AppError {
 }
 
 export function isAppError(error: object): error is AppError {
+  console.log(error);
   return (error as AppError).type !== undefined;
 }
 
